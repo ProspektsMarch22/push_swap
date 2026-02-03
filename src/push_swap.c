@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 14:57:50 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/02/03 15:01:30 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/02/03 16:26:46 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 int main(void)
 {
-    ft_printf("Isso é um teste\n");
-    char *num = "42";
-    ft_printf("%d\n", ft_atoi(num));
+    s_stack *a;
+
+    a = createStack();
+    stackPush(a, 21);
+    stackPush(a, 42);
+    ft_printf("%d\n", stackPop(a));
+    ft_printf("%d\n", stackTop(a));
+    ft_printf("%d\n", stackPop(a));
+    stackFree(a);
     return (0);
 }
