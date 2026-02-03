@@ -1,15 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/25 16:43:32 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/02/03 15:00:31 by icezar-s         ###   ########.fr       */
+/*   Created: 2026/02/03 14:57:50 by icezar-s          #+#    #+#             */
+/*   Updated: 2026/02/03 15:01:30 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../src/ft_printf/ft_printf.h"
-#include "../src/libft/libft.h"
+#include "../includes/push_swap.h"
 
+int main(void)
+{
+    ft_printf("Isso é um teste\n");
+    char *num = "42";
+    ft_printf("%d\n", ft_atoi(num));
+    return (0);
+}
