@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 16:43:32 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/02/03 16:24:39 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/02/04 14:25:49 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,30 @@
 #define MAX 500
 
 // Data structures - I'll use stacks created inside queues.
-typedef struct t_queue {
-    int data[MAX];
-    int front;
-    int rear;
-    int size;
-}   s_queue;
+typedef struct s_queue
+{
+	int	data[MAX];
+	int	front;
+	int	rear;
+	int	size;
+}	t_queue;
 
-typedef struct t_stack {
-    s_queue q;
-}   s_stack;
+typedef struct s_stack
+{
+	t_queue	q;
+}	t_stack;
 
 // DS functions
-
 // Queue functions
-void    initQueue(s_queue *q);
-bool    isQueueEmpty(s_queue *q);
-void    enqueue(s_queue *q, int val);
-int     dequeue(s_queue *q);
-int     peek(s_queue *q);
+void	init_queue(t_queue *q);
+bool	is_queue_empty(t_queue *q);
+void	enqueue(t_queue *q, int val);
+int		dequeue(t_queue *q);
+int		peek(t_queue *q);
 
 // Stack functions
-s_stack *createStack(void);
-void    stackPush(s_stack *stack, int x);
-int     stackPop(s_stack *stack);
-int     stackTop(s_stack *stack);
-void    stackFree(s_stack *stack);
+t_stack	*create_stack(void);
+void	stack_push(t_stack *stack, int x);
+int		stack_pop(t_stack *stack);
+int		stack_top(t_stack *stack);
+void	stack_free(t_stack *stack);
