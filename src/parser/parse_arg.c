@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 18:04:35 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/02/04 18:28:38 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/02/09 16:59:33 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,33 @@ void	parse_arg(char *arg, t_stack *a)
 		if (!check_valid_str(elements[i]))
 			exit_error();
 		lnbr = ft_atol(elements[i]);
-		if (lnbr > INT_MAX || lnbr < INT_MIN)
+		if (lnbr > INT_MAX || lnbr < INT_MIN 
+				|| has_duplicate((int)lnbr, a))
 			exit_error();
-		if (!has_duplicate((int)lnbr, a))
-			stack_push(a, (int)lnbr);
+		stack_push(a, (int)lnbr);
 		free(elements[i]);
 		i++;
 	}
 	free(elements);
+}
+
+void	parse_args(char **args, t_stack *a)
+{
+	long	lnbr;
+	size_t	i;
+
+	i = 0;
+	while (args[i])
+	{
+		if (!check_valid_str(args[i]))
+			exit_error();
+		lnbr = ft_atol(args[i]);
+		if (lnbr > INT_MAX || lnbr < INT_MIN 
+				|| has_duplicate((int)lnbr, a))
+			exit_error();
+		stack_push(a, (int)lnbr);
+		free(args[i]);
+		i++;
+	}
+	free(args);
 }
