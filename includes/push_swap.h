@@ -6,13 +6,14 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 16:43:32 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/02/04 16:20:57 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/02/09 15:06:01 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/ft_printf/ft_printf.h"
 #include "../src/libft/libft.h"
 #include <stdbool.h>
+#include <limits.h>
 
 // Operational Limit, can be changed for testing
 #define MAX 500
@@ -38,6 +39,7 @@ bool	is_queue_empty(t_queue *q);
 void	enqueue(t_queue *q, int val);
 int		dequeue(t_queue *q);
 int		peek(t_queue *q);
+int		abandon_queue(t_queue *q);
 
 // Stack functions
 t_stack	*create_stack(void);
@@ -52,3 +54,12 @@ void	sb(t_stack *b);
 void	ss(t_stack *a, t_stack *b);
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
+
+// Parsing functions
+void	parse_arg(char *arg, t_stack *a);
