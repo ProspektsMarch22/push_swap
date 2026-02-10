@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 14:57:50 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/02/09 17:04:20 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/02/10 18:16:11 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,7 @@ int main(int argc, char *argv[])
 	int	i;
 
 	a = create_stack();
-	if (argc == 2 && *argv[1])
-	{
-		parse_arg(argv[1], a);
-		ft_printf("%d\n", stack_top(a));
-	}
-	else if (argc > 2)
+	if (argc > 2)
 	{
 		args = (char **)ft_calloc((size_t)(argc - 1), (sizeof(char *) * argc));
 		if (!args)
@@ -34,7 +29,7 @@ int main(int argc, char *argv[])
 			args[i - 1] = ft_strdup(argv[i]);
 		parse_args(args, a);
 		ft_printf("%d\n", stack_top(a));
+		free(a);
 	}
-	stack_free(a);
 	return (0);
 }
