@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 14:57:50 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/02/10 18:16:11 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/04 01:13:00 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,12 @@ int main(int argc, char *argv[])
 		while (++i < argc)
 			args[i - 1] = ft_strdup(argv[i]);
 		parse_args(args, a);
-		ft_printf("%d\n", stack_top(a));
+		i = 0;
+		while (a->q.data[i] && i < a->q.size)
+		{
+			ft_printf("%d\n", a->q.data[i]);
+			i++;
+		}
 		free(a);
 	}
 	return (0);

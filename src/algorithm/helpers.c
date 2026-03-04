@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 17:53:44 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/02/10 18:10:54 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/04 00:57:17 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,13 @@ void	numbers_to_ranked(t_stack *a)
 		j = 0;
 		count_smaller = 0;
 		while (j < a->q.size)
-			if (a->q.data[j++] <= a->q.data[i])
+			if (a->q.data[j++] < a->q.data[i])
 				count_smaller++;
-		ranks[i] = count_smaller;
+		ranks[i] = count_smaller + 1;
 		i++;
 	}
 	i = -1;
 	while (++i < a->q.size)
-		a->q.data[a->q.front - i] = ranks[i];
+		a->q.data[i] = ranks[i];
+	free(ranks);
 }
