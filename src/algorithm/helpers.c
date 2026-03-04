@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 17:53:44 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/04 01:41:14 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/04 18:35:44 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	numbers_to_ranked(t_stack *a)
 	int	j;
 	int	count_smaller;
 	int	*ranks;
-	int	idx_i;
-	int	idx_j;
 
 	ranks = (int *)malloc(sizeof(int) * (a->q.size));
 	if (!ranks)
@@ -27,24 +25,17 @@ void	numbers_to_ranked(t_stack *a)
 	i = 0;
 	while (i < a->q.size)
 	{
-		j = 0;
+		j = -1;
 		count_smaller = 0;
-		idx_i = (a->q.front + i) % MAX;
-		while (j < a->q.size)
-		{
-			idx_j = (a->q.front + j) % MAX;
-			if (a->q.data[idx_j] < a->q.data[idx_i])
+		while (++j < a->q.size)
+			if (a->q.data[(a->q.front + j) % MAX]
+				< a->q.data[(a->q.front + i) % MAX])
 				count_smaller++;
-			j++;
-		}
 		ranks[i] = count_smaller;
 		i++;
 	}
 	i = -1;
 	while (++i < a->q.size)
-	{
-		idx_i = (a->q.front + i) % MAX;
-		a->q.data[idx_i] = ranks[i];
-	}
+		a->q.data[(a->q.front + i) % MAX] = ranks[i];
 	free(ranks);
 }
