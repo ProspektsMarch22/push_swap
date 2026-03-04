@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 17:53:44 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/04 18:35:44 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/04 19:19:24 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,15 @@ void	numbers_to_ranked(t_stack *a)
 	while (++i < a->q.size)
 		a->q.data[(a->q.front + i) % MAX] = ranks[i];
 	free(ranks);
+}
+
+bool	check_sorted(t_stack *a)
+{
+	int	i;
+
+	i = -1;
+	while (++i < a->q.size)
+		if (i != a->q.data[(a->q.front + i) % MAX])
+			return (false);
+	return (true);
 }

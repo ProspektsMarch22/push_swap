@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 14:57:50 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/04 01:42:03 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/04 19:23:16 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int main(int argc, char *argv[])
 		numbers_to_ranked(a);
 		while (a->q.size)
 			ft_printf("%d\n", stack_pop(a));
+		if (check_sorted(a))
+			ft_printf("OK\n");
 		free(a);
 	}
 	return (0);
