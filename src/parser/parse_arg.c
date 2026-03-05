@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 18:04:35 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/05 00:52:46 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/05 01:09:19 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	parse_arg(char *arg, t_stack *a)
 {
 	char	**elements;
 	long	lnbr;
-	int	i;
+	int		i;
 
 	elements = ft_split(arg, 32);
 	i = 0;
@@ -56,8 +56,8 @@ void	parse_arg(char *arg, t_stack *a)
 		if (!check_valid_str(elements[i]))
 			exit_error();
 		lnbr = ft_atol(elements[i]);
-		if (lnbr > INT_MAX || lnbr < INT_MIN 
-				|| has_duplicate((int)lnbr, a))
+		if (lnbr > INT_MAX || lnbr < INT_MIN
+			|| has_duplicate((int)lnbr, a))
 			exit_error();
 		stack_push(a, (int)lnbr);
 		free(elements[i]);
@@ -69,7 +69,7 @@ void	parse_arg(char *arg, t_stack *a)
 void	parse_args(char **args, int argc, t_stack *a)
 {
 	long	lnbr;
-	int	i;
+	int		i;
 
 	i = argc - 2;
 	while (args[i] && i >= 0)
@@ -77,8 +77,8 @@ void	parse_args(char **args, int argc, t_stack *a)
 		if (!check_valid_str(args[i]))
 			exit_error();
 		lnbr = ft_atol(args[i]);
-		if (lnbr > INT_MAX || lnbr < INT_MIN 
-				|| has_duplicate((int)lnbr, a))
+		if (lnbr > INT_MAX || lnbr < INT_MIN
+			|| has_duplicate((int)lnbr, a))
 			exit_error();
 		stack_push(a, (int)lnbr);
 		free(args[i]);

@@ -6,20 +6,20 @@
 /*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 19:13:14 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/04 22:02:02 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/05 01:10:51 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void case_0(t_stack *a)
+static void	case_0(t_stack *a)
 {
 	rra(a);
 	sa(a);
 	return ;
 }
 
-static void case_1(t_stack *a)
+static void	case_1(t_stack *a)
 {
 	if (a->q.data[a->q.front + 1] == 0)
 	{
@@ -30,7 +30,7 @@ static void case_1(t_stack *a)
 	return ;
 }
 
-static void case_2(t_stack *a)
+static void	case_2(t_stack *a)
 {
 	if (a->q.data[a->q.front + 1] == 0)
 	{
