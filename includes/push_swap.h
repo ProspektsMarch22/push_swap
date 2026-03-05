@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 16:43:32 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/05 00:42:39 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/05 02:04:21 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,3 +69,4 @@ void	parse_args(char **args, int argc, t_stack *a);
 void	numbers_to_ranked(t_stack *a);
 bool	check_sorted(t_stack *a);
 void	juggler_3(t_stack *a);
+void	juggler_5(t_stack *a, t_stack *b);

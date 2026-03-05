@@ -6,7 +6,7 @@
 #    By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/03 14:36:43 by icezar-s          #+#    #+#              #
-#    Updated: 2026/03/04 19:14:31 by icezar-s         ###   ########.fr        #
+#    Updated: 2026/03/05 02:32:38 by icezar-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,13 +28,14 @@ PRINTF = $(PRINTF_DIR)/libftprintf.a
 
 SRCS = $(SRC_DIR)/push_swap.c \
        $(SRC_DIR)/struct/queue_functions.c \
-	   $(SRC_DIR)/struct/stack_functions.c \
-	   $(SRC_DIR)/ops/operations_1.c \
-	   $(SRC_DIR)/ops/operations_2.c \
-	   $(SRC_DIR)/ops/operations_3.c \
-	   $(SRC_DIR)/parser/parse_arg.c \
-	   $(SRC_DIR)/algorithm/helpers.c \
-	   $(SRC_DIR)/algorithm/sort_3.c
+       $(SRC_DIR)/struct/stack_functions.c \
+       $(SRC_DIR)/ops/operations_1.c \
+       $(SRC_DIR)/ops/operations_2.c \
+       $(SRC_DIR)/ops/operations_3.c \
+       $(SRC_DIR)/parser/parse_arg.c \
+       $(SRC_DIR)/algorithm/helpers.c \
+       $(SRC_DIR)/algorithm/sort_3.c \
+       $(SRC_DIR)/algorithm/sort_5.c
 
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
