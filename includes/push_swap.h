@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 16:43:32 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/04 20:50:05 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/05 00:42:39 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	rrr(t_stack *a, t_stack *b);
 
 // Parsing functions
 void	parse_arg(char *arg, t_stack *a);
-void	parse_args(char **args, t_stack *a);
+void	parse_args(char **args, int argc, t_stack *a);
 
 // Algorithm-Related functions
 void	numbers_to_ranked(t_stack *a);

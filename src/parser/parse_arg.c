@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 18:04:35 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/05 00:24:08 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/05 00:52:46 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,13 @@ void	parse_arg(char *arg, t_stack *a)
 	free(elements);
 }
 
-void	parse_args(char **args, t_stack *a)
+void	parse_args(char **args, int argc, t_stack *a)
 {
 	long	lnbr;
-	size_t	i;
+	int	i;
 
-	i = 0;
-	while (args[i])
+	i = argc - 2;
+	while (args[i] && i >= 0)
 	{
 		if (!check_valid_str(args[i]))
 			exit_error();
@@ -82,7 +82,7 @@ void	parse_args(char **args, t_stack *a)
 			exit_error();
 		stack_push(a, (int)lnbr);
 		free(args[i]);
-		i++;
+		i--;
 	}
 	free(args);
 }

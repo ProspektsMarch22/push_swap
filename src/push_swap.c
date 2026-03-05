@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 14:57:50 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/05 00:23:33 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/05 00:42:57 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		i = 0;
 		while (++i < argc)
 			args[i - 1] = ft_strdup(argv[i]);
-		parse_args(args, a);
+		parse_args(args, argc, a);
 		numbers_to_ranked(a);
 		juggler_3(a);
 	}
