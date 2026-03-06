@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 16:43:32 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/06 21:18:23 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/06 23:02:26 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <limits.h>
 
 // Operational Limit, can be changed for testing
-#define MAX 500
+#define MAX 1000
 
 // Data structures - I'll use stacks created inside queues.
 typedef struct s_queue
