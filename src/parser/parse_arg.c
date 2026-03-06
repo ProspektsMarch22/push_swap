@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 18:04:35 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/06 22:39:23 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/06 22:49:39 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	parse_args(char **args, int argc, t_stack *a)
 	int		i;
 
 	i = argc - 2;
-	while (i>= 0 && args[i])
+	while (i >= 0 && args[i])
 	{
 		if (!check_valid_str(args[i]))
 			exit_error();

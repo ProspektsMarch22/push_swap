@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 20:07:51 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/06 22:32:17 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/06 22:50:58 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,8 @@ static void	push_b_in_chunks(t_stack *a, t_stack *b, int size)
 {
 	int	chunk;
 	int	count;
-	int	i;
 
 	count = 0;
-	i = -1;
 	if (size <= 100)
 		chunk = 15;
 	else
