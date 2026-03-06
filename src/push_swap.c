@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 14:57:50 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/06 20:25:05 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/06 22:00:37 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 	t_stack	*b;
 	char	**args;
 	int	i;
+	int	size;
 
 	a = create_stack();
 	b = create_stack();
@@ -34,7 +35,13 @@ int main(int argc, char *argv[])
 	else
 		parse_arg(argv[1], a);
 	numbers_to_ranked(a);
-	ft_printf("%d\n", get_pos(a, 0));
+	size = a->q.size;
+	if (size <= 3)
+		juggler_3(a);
+	else if (size <= 5)
+		juggler_5(a, b);
+	else if (size > 5)
+		butterfly_sort(a, b, size);
 	free(a);
 	free(b);
 	return (0);

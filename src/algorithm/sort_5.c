@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 01:12:25 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/05 02:37:39 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/06 20:48:21 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 static int	get_min_pos(t_stack *a)
 {
-	int	min;
 	int	i;
+	int	min;
 	int	pos;
 	int	idx;
 
 	min = stack_top(a);
 	i = 0;
-	pos = 1;
+	pos = 0;
 	while (i < a->q.size)
 	{
 		idx = (a->q.front + i) % MAX;
@@ -41,10 +41,10 @@ static void	pb_min(t_stack *a, t_stack *b)
 
 	min_pos = get_min_pos(a);
 	if (min_pos <= ((a->q.size) / 2))
-		while (get_min_pos(a) != 1)
+		while (get_min_pos(a) != 0)
 			ra(a);
 	else
-		while (get_min_pos(a) != 1)
+		while (get_min_pos(a) != 0)
 			rra(a);
 	pb(a, b);
 }

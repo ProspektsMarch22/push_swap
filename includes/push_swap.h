@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 16:43:32 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/06 20:23:28 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/06 21:18:23 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,4 @@ void	numbers_to_ranked(t_stack *a);
 bool	check_sorted(t_stack *a);
 void	juggler_3(t_stack *a);
 void	juggler_5(t_stack *a, t_stack *b);
-int	get_pos(t_stack *stack, int target);
+void	butterfly_sort(t_stack *a, t_stack *b, int size);
