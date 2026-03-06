@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 14:57:50 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/05 02:09:36 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/06 20:25:05 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ int main(int argc, char *argv[])
 	else
 		parse_arg(argv[1], a);
 	numbers_to_ranked(a);
-	if (a->q.size > 3)
-		juggler_5(a, b);
-	else
-		juggler_3(a);
+	ft_printf("%d\n", get_pos(a, 0));
 	free(a);
 	free(b);
 	return (0);

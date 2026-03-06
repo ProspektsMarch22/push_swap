@@ -6,7 +6,7 @@
 #    By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/03 14:36:43 by icezar-s          #+#    #+#              #
-#    Updated: 2026/03/05 02:32:38 by icezar-s         ###   ########.fr        #
+#    Updated: 2026/03/06 20:23:58 by icezar-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRCS = $(SRC_DIR)/push_swap.c \
        $(SRC_DIR)/parser/parse_arg.c \
        $(SRC_DIR)/algorithm/helpers.c \
        $(SRC_DIR)/algorithm/sort_3.c \
-       $(SRC_DIR)/algorithm/sort_5.c
+       $(SRC_DIR)/algorithm/sort_5.c \
+       $(SRC_DIR)/algorithm/butterfly_sort.c
 
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
