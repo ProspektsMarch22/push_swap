@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 20:07:51 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/06 21:56:29 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/06 22:32:17 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	get_max_pos(t_stack *stack)
 		if (stack->q.data[idx] > max)
 		{
 			max = stack->q.data[idx];
-			pos++;
+			pos = i;
 		}
 		i++;
 	}
@@ -68,28 +68,31 @@ static void	push_b_in_chunks(t_stack *a, t_stack *b, int size)
 static void	move_max_top(t_stack *b, int size)
 {
 	int	pos;
+	int	max_val;
 
 	pos = get_max_pos(b);
+	max_val = b->q.data[(b->q.front + pos) % MAX];
 	if (pos == 1)
 		return (sb(b));
 	if (pos <= size / 2)
-		while (stack_top(b) != b->q.data[(b->q.front + pos) % MAX])
+		while (stack_top(b) != max_val)
 			rb(b);
 	else
-		while (stack_top(b) != b->q.data[(b->q.front + pos) % MAX])
+		while (stack_top(b) != max_val)
 			rrb(b);
 }
 
 void	butterfly_sort(t_stack *a, t_stack *b, int size)
 {
 	int	max;
+	int	max_val;
 
 	push_b_in_chunks(a, b, size);
 	while (b->q.size)
 	{
 		max = get_max_pos(b);
-		if (b->q.size > 1 && stack_top(b) == 
-				(b->q.data[(b->q.front + max) % MAX] - 1))
+		max_val = b->q.data[(b->q.front + max) % MAX];
+		if (b->q.size > 1 && stack_top(b) == (max_val - 1))
 		{
 			pa(a, b);
 			move_max_top(b, b->q.size);
