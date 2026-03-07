@@ -69,22 +69,22 @@ Specifically, AI helped with:
 ### Articles and Data Structure Studies
 As of implementing this program, I've come to write a few articles on sorting algorithms and data structures.
 
-* [Articles in Sorting Algorithms] (https://www.notion.so/Sorting-Algorithms-2eaeda9fb48a8082b0f9ef1ca1bd6121?source=copy_link)
+* [Articles in Sorting Algorithms](https://www.notion.so/Sorting-Algorithms-2eaeda9fb48a8082b0f9ef1ca1bd6121?source=copy_link)
 
 Those were all inspired by the books:
 
 * Algorithms in C, by Robert Sedgewick
 * Data Structures Using C, by Reema Thareja
 
-The Butterfly Sorting is a custom sorting algorithm, an extrapolation of the principles behind Bubble Sort and Bucket Sort (mainly the latter). This algorithm in specific was achieved through experimentation and was heavily contributed by lpaiva, a colleague and friend from 42 Porto.
+The Butterfly Sorting is a custom sorting algorithm, an extrapolation of the principles behind Bubble Sort and Bucket Sort (mainly the latter). This algorithm in specific was achieved through experimentation and was heavily contributed by Luis Paiva
 
 Its efficient in this context is particularly neat due to the custom data structure. 
 
 On Data Structures, I've wroted the article:
 
-* [Article on Stacks] (https://www.notion.so/Stacks-2f3eda9fb48a8008b284c18a1acdf124?source=copy_link)
+* [Article on Stacks](https://www.notion.so/Stacks-2f3eda9fb48a8008b284c18a1acdf124?source=copy_link)
 
-But i was heavily inspired by the [LeetCode Problem 225] (https://leetcode.com/problems/implement-stack-using-queues/description/). The array that is forced to be implemented as one of the most optimal solutions to this problem gave me an excellent idea as to how I'd implement a stack for the `push_swap` problem. 
+But i was heavily inspired by the [LeetCode Problem 225](https://leetcode.com/problems/implement-stack-using-queues/description/). The array that is forced to be implemented as one of the most optimal solutions to this problem gave me an excellent idea as to how I'd implement a stack for the `push_swap` problem. 
 
 ### Acknowledgments
 This project would not be possible without Luis Paiva's and Bruno Ramalho's contribution as peer-reviewers and supporters. 
