@@ -86,7 +86,7 @@ On Data Structures, I've wroted the article:
 
 But i was heavily inspired by the [LeetCode Problem 225](https://leetcode.com/problems/implement-stack-using-queues/description/). The array that is forced to be implemented as one of the most optimal solutions to this problem gave me an excellent idea as to how I'd implement a stack for the `push_swap` problem. 
 
-### Acknowledgments
+### Acknowledgements
 This project would not be possible without Luis Paiva's and Bruno Ramalho's contribution as peer-reviewers and supporters. 
 
 A huge thanks to Kleyton Filho, Daniel Fonseca, Maria Paula, Thiago Cesar.
