@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lpaiva <lpaiva@student.42porto.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 01:12:25 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/06 20:48:21 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/08 00:29:26 by lpaiva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	get_min_pos(t_stack *a)
 		if (a->q.data[idx] < min)
 		{
 			min = a->q.data[idx];
-			pos++;
+			pos = i;
 		}
 		i++;
 	}
@@ -51,21 +51,18 @@ static void	pb_min(t_stack *a, t_stack *b)
 
 void	juggler_5(t_stack *a, t_stack *b)
 {
-	if (!check_sorted(a))
+	if (a->q.size == 4)
 	{
-		if (a->q.size == 4)
-		{
-			pb_min(a, b);
-			juggler_3(a);
-			pa(a, b);
-		}
-		else if (a->q.size == 5)
-		{
-			pb_min(a, b);
-			pb_min(a, b);
-			juggler_3(a);
-			pa(a, b);
-			pa(a, b);
-		}
+		pb_min(a, b);
+		juggler_3(a);
+		pa(a, b);
+	}
+	else if (a->q.size == 5)
+	{
+		pb_min(a, b);
+		pb_min(a, b);
+		juggler_3(a);
+		pa(a, b);
+		pa(a, b);
 	}
 }

@@ -3,55 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lpaiva <lpaiva@student.42porto.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 19:13:14 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/05 01:10:51 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/08 00:47:33 by lpaiva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void	case_0(t_stack *a)
-{
-	rra(a);
-	sa(a);
-	return ;
-}
-
-static void	case_1(t_stack *a)
-{
-	if (a->q.data[a->q.front + 1] == 0)
-	{
-		sa(a);
-		return ;
-	}
-	rra(a);
-	return ;
-}
-
-static void	case_2(t_stack *a)
-{
-	if (a->q.data[a->q.front + 1] == 0)
-	{
-		ra(a);
-		return ;
-	}
-	sa(a);
-	rra(a);
-	return ;
-}
-
 void	juggler_3(t_stack *a)
 {
-	if (!check_sorted(a))
+	int	top;
+	int	mid;
+	int	bot;
+
+	top = a->q.data[a->q.front];
+	mid = a->q.data[(a->q.front + 1) % MAX];
+	bot = a->q.data[(a->q.front + 2) % MAX];
+	if (top > mid && top < bot && mid < bot)
+		sa(a);
+	else if (top > mid && mid > bot)
 	{
-		if (a->q.size == 2 && stack_top(a) == 1)
-			return (sa(a));
-		if (stack_top(a) == 0)
-			return (case_0(a));
-		else if (stack_top(a) == 1)
-			return (case_1(a));
-		return (case_2(a));
+		sa(a);
+		rra(a);
 	}
+	else if (top > mid && mid < bot && top > bot)
+		ra(a);
+	else if (top < mid && top < bot && mid > bot)
+	{
+		sa(a);
+		ra(a);
+	}
+	else if (top < mid && top > bot && mid > bot)
+		rra(a);
 }

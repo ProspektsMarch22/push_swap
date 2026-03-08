@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lpaiva <lpaiva@student.42porto.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 14:57:50 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/07 17:44:56 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/08 00:47:32 by lpaiva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ static void	handler(t_stack *a, t_stack *b)
 	int	size;
 
 	size = a->q.size;
-	if (size == 0 || size == 1)
+	if (check_sorted(a) || size <= 1)
 		return ;
-	if (size <= 3)
+	else if (size == 2)
+		sa(a);
+	else if (size <= 3)
 		juggler_3(a);
 	else if (size <= 5)
 		juggler_5(a, b);
@@ -50,5 +52,5 @@ int	main(int argc, char *argv[])
 		parse_arg(argv[1], a);
 	numbers_to_ranked(a);
 	handler(a, b);
-	return (0);
+	return (free(a), free(b), 0);
 }
