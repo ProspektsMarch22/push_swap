@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 18:04:35 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/06 22:49:39 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/08 02:04:01 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,17 @@ static bool	check_valid_str(char *str)
 	return (true);
 }
 
-static void	exit_error(void)
+static void	exit_error(t_stack *a, t_stack *b, char **args, int i)
 {
 	ft_putstr_fd("Error\n", 2);
+	while (i >= 0)
+	{
+		free(args[i]);
+		i--;
+	}
+	free(args);
+	free(a);
+	free(b);
 	exit(EXIT_FAILURE);
 }
 
@@ -40,7 +48,7 @@ static bool	has_duplicate(int nbr, t_stack *a)
 	return (false);
 }
 
-void	parse_arg(char *arg, t_stack *a)
+void	parse_arg(char *arg, t_stack *a, t_stack *b)
 {
 	char	**elements;
 	long	lnbr;
@@ -54,11 +62,11 @@ void	parse_arg(char *arg, t_stack *a)
 	while (i >= 0 && elements[i])
 	{
 		if (!check_valid_str(elements[i]))
-			exit_error();
+			exit_error(a, b, elements, i);
 		lnbr = ft_atol(elements[i]);
 		if (lnbr > INT_MAX || lnbr < INT_MIN
 			|| has_duplicate((int)lnbr, a))
-			exit_error();
+			exit_error(a, b, elements, i);
 		stack_push(a, (int)lnbr);
 		free(elements[i]);
 		i--;
@@ -66,7 +74,7 @@ void	parse_arg(char *arg, t_stack *a)
 	free(elements);
 }
 
-void	parse_args(char **args, int argc, t_stack *a)
+void	parse_args(char **args, int argc, t_stack *a, t_stack *b)
 {
 	long	lnbr;
 	int		i;
@@ -75,11 +83,11 @@ void	parse_args(char **args, int argc, t_stack *a)
 	while (i >= 0 && args[i])
 	{
 		if (!check_valid_str(args[i]))
-			exit_error();
+			exit_error(a, b, args, i);
 		lnbr = ft_atol(args[i]);
 		if (lnbr > INT_MAX || lnbr < INT_MIN
 			|| has_duplicate((int)lnbr, a))
-			exit_error();
+			exit_error(a, b, args, i);
 		stack_push(a, (int)lnbr);
 		free(args[i]);
 		i--;

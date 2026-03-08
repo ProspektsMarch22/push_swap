@@ -6,7 +6,7 @@
 /*   By: lpaiva <lpaiva@student.42porto.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 14:57:50 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/08 00:47:32 by lpaiva           ###   ########.fr       */
+/*   Updated: 2026/03/08 01:28:39 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ int	main(int argc, char *argv[])
 	{
 		args = (char **)ft_calloc((size_t)(argc - 1), (sizeof(char *) * argc));
 		if (!args)
-			exit(EXIT_FAILURE);
+			return (free(a), free(b), 0);
 		i = 0;
 		while (++i < argc)
 			args[i - 1] = ft_strdup(argv[i]);
-		parse_args(args, argc, a);
+		parse_args(args, argc, a, b);
 	}
 	else if (argc == 2)
-		parse_arg(argv[1], a);
+		parse_arg(argv[1], a, b);
 	numbers_to_ranked(a);
 	handler(a, b);
 	return (free(a), free(b), 0);
