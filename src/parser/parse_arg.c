@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 18:04:35 by icezar-s          #+#    #+#             */
-/*   Updated: 2026/03/08 02:04:01 by icezar-s         ###   ########.fr       */
+/*   Updated: 2026/03/09 01:07:19 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static bool	check_valid_str(char *str)
 	int	i;
 
 	i = -1;
+	if (*str == '-' && *(str + 1) == '\0')
+		return (false);
 	while (str[++i])
 		if (!ft_isdigit(str[i]) && str[i] != '-')
 			return (false);
